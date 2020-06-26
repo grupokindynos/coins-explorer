@@ -24,7 +24,7 @@
     "system_user": "telos",
     "version": "2.2.0",
     "binary_url": "https://github.com/phoenixkonsole/transcendence/releases/download/2.2/TELOS.Wallet_Complete_2_2_Linux_x64.zip",
-    "extract_command": "tar -C backend --strip 1 -xf",
+    "extract_command": "unzip -j -d backend",
     "exclude_files": [
       "bin/transcendence-qt"
     ],
