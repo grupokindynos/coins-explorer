@@ -30,6 +30,7 @@ import (
 	"github.com/grupokindynos/coins-explorer/bchain/coins/rapids"
 	"github.com/grupokindynos/coins-explorer/bchain/coins/ravencoin"
 	"github.com/grupokindynos/coins-explorer/bchain/coins/snowgem"
+	"github.com/grupokindynos/coins-explorer/bchain/coins/xbtx"
 	"github.com/grupokindynos/coins-explorer/bchain/coins/zcoin"
 	"github.com/grupokindynos/coins-explorer/common"
 
@@ -63,6 +64,7 @@ func init() {
 	BlockChainFactories["Daps"] = daps.NewDapsRPC
 	BlockChainFactories["Index"] = idx.NewIdxRPC
 	BlockChainFactories["Telos"] = telos.NewTelosRPC
+	BlockChainFactories["BitcoinSubsidium"] = xbtx.NewBitcoinSubsidiumRPC
 }
 
 // GetCoinNameFromConfig gets coin name and coin shortcut from config file
