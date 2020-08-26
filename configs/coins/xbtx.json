@@ -22,12 +22,9 @@
     "package_name": "backend-xbtx",
     "package_revision": "polispay",
     "system_user": "xbtx",
-    "version": "Slouchy Smurf",
-    "binary_url": "https://github.com/phoenixkonsole/xbtx/releases/download/1%2B3xPi()/Linux_x64.zip",
-    "extract_command": "tar -C backend --strip 1 -xf",
-    "exclude_files": [
-      "BitcoinSubsidium-qt"
-    ],
+    "version": "1.0",
+    "binary_url": "https://github.com/Aether-eum/coin-releases/releases/download/v1.0/Linux64-xbtx.zip",
+    "extract_command": "unzip -j -d backend",
     "exec_command_template": "{{.Env.BackendInstallPath}}/{{.Coin.Alias}}/BitcoinSubsidiumd -datadir={{.Env.BackendDataPath}}/{{.Coin.Alias}}/backend -conf={{.Env.BackendInstallPath}}/{{.Coin.Alias}}/{{.Coin.Alias}}.conf -pid=/run/{{.Coin.Alias}}/{{.Coin.Alias}}.pid",
     "logrotate_files_template": "{{.Env.BackendDataPath}}/{{.Coin.Alias}}/backend/*.log",
     "postinst_script_template": "",
@@ -60,6 +57,6 @@
   },
   "meta": {
     "package_maintainer": "Enrique Berrueta",
-    "package_maintainer_email": "admin@indexchain.org"
+    "package_maintainer_email": "eabz@polispay.org"
   }
 }
