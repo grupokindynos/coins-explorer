@@ -1,4 +1,4 @@
-package zcoin
+package firo
 
 import (
 	"encoding/json"
