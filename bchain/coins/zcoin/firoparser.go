@@ -1,4 +1,4 @@
-package zcoin
+package firo
 
 import (
 	"github.com/grupokindynos/coins-explorer/bchain"
