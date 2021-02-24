@@ -8,16 +8,16 @@ import (
 	"github.com/juju/errors"
 )
 
-type ZcoinRPC struct {
+type FiroRPC struct {
 	*btc.BitcoinRPC
 }
 
-func NewZcoinRPC(config json.RawMessage, pushHandler func(bchain.NotificationType)) (bchain.BlockChain, error) {
+func NewFiroRPC(config json.RawMessage, pushHandler func(bchain.NotificationType)) (bchain.BlockChain, error) {
 	b, err := btc.NewBitcoinRPC(config, pushHandler)
 	if err != nil {
 		return nil, err
 	}
-	s := &ZcoinRPC{
+	s := &FiroRPC{
 		b.(*btc.BitcoinRPC),
 	}
 	s.RPCMarshaler = btc.JSONMarshalerV1{}
@@ -25,7 +25,7 @@ func NewZcoinRPC(config json.RawMessage, pushHandler func(bchain.NotificationTyp
 	return s, nil
 }
 
-func (b *ZcoinRPC) Initialize() error {
+func (b *FiroRPC) Initialize() error {
 	ci, err := b.GetChainInfo()
 	if err != nil {
 		return err
@@ -39,7 +39,7 @@ func (b *ZcoinRPC) Initialize() error {
 	return nil
 }
 
-func (b *ZcoinRPC) GetBlock(hash string, height uint32) (*bchain.Block, error) {
+func (b *FiroRPC) GetBlock(hash string, height uint32) (*bchain.Block, error) {
 	var err error
 	if hash == "" && height > 0 {
 		hash, err = b.GetBlockHash(height)
@@ -78,6 +78,6 @@ func (b *ZcoinRPC) GetBlock(hash string, height uint32) (*bchain.Block, error) {
 	return block, nil
 }
 
-func (b *ZcoinRPC) GetTransactionForMempool(txid string) (*bchain.Tx, error) {
+func (b *FiroRPC) GetTransactionForMempool(txid string) (*bchain.Tx, error) {
 	return b.GetTransaction(txid)
 }
