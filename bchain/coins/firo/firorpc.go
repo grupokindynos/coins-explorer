@@ -32,7 +32,7 @@ func (b *FiroRPC) Initialize() error {
 	}
 	chainName := ci.Chain
 	params := GetChainParams(chainName)
-	b.Parser = NewZcoinParser(params, b.ChainConfig)
+	b.Parser = NewFiroParser(params, b.ChainConfig)
 	b.Testnet = false
 	b.Network = "livenet"
 	glog.Info("rpc: block chain ", params.Name)
