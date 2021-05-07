@@ -1,9 +1,9 @@
 {
   "coin": {
-    "name": "Zcoin",
-    "shortcut": "XZC",
-    "label": "Zcoin",
-    "alias": "zcoin"
+    "name": "Firo",
+    "shortcut": "FIRO",
+    "label": "Firo",
+    "alias": "firo"
   },
   "ports": {
     "backend_rpc": 8030,
@@ -19,13 +19,13 @@
     "message_queue_binding_template": "tcp://127.0.0.1:{{.Ports.BackendMessageQueue}}"
   },
   "backend": {
-    "package_name": "backend-zcoin",
+    "package_name": "backend-firo",
     "package_revision": "polispay",
-    "system_user": "zcoin",
-    "version": "0.13.8.8",
-    "binary_url": "https://github.com/zcoinofficial/zcoin/releases/download/v0.13.8.8/zcoin-0.13.8.8-linux64.tar.gz",
+    "system_user": "firo",
+    "version": "0.14.5.3",
+    "binary_url": "https://github.com/firoorg/firo/releases/download/v0.14.5.3/firo-0.14.5.3-linux64.tar.gz",
     "verification_type": "sha256",
-    "verification_source": "badab4c7e42cb7ce567c1e02a700b52f7ea3f55780e4e180b89596ad940f7189",
+    "verification_source": "025780a36f305e697bb04756d442a04a4070121ed13d6effff41ff4b891efa7f",
     "extract_command": "tar -C backend --strip 1 -xf",
     "exclude_files": [
       "bin/tor",
@@ -33,8 +33,8 @@
       "bin/tor-print-ed-signing-cert",
       "bin/torify",
       "bin/tor-resolve",
-      "bin/zcoin-qt",
-      "bin/zcoin-tx",
+      "bin/firo-qt",
+      "bin/firo-tx",
       "etc/tor/torrc.sample",
       "include/bitcoinconsensus.h",
       "lib/libbitcoinconsensus.so",
@@ -43,7 +43,7 @@
       "share/tor/geoip",
       "share/tor/geoip6"
     ],
-    "exec_command_template": "{{.Env.BackendInstallPath}}/{{.Coin.Alias}}/bin/zcoind -datadir={{.Env.BackendDataPath}}/{{.Coin.Alias}}/backend -conf={{.Env.BackendInstallPath}}/{{.Coin.Alias}}/{{.Coin.Alias}}.conf -pid=/run/{{.Coin.Alias}}/{{.Coin.Alias}}.pid",
+    "exec_command_template": "{{.Env.BackendInstallPath}}/{{.Coin.Alias}}/bin/firod -datadir={{.Env.BackendDataPath}}/{{.Coin.Alias}}/backend -conf={{.Env.BackendInstallPath}}/{{.Coin.Alias}}/{{.Coin.Alias}}.conf -pid=/run/{{.Coin.Alias}}/{{.Coin.Alias}}.pid",
     "logrotate_files_template": "{{.Env.BackendDataPath}}/{{.Coin.Alias}}/backend/*.log",
     "postinst_script_template": "",
     "service_type": "forking",
@@ -57,8 +57,8 @@
     }
   },
   "blockbook": {
-    "package_name": "blockbook-zcoin",
-    "system_user": "blockbook-zcoin",
+    "package_name": "blockbook-firo",
+    "system_user": "blockbook-firo",
     "internal_binding_template": ":{{.Ports.BlockbookInternal}}",
     "public_binding_template": ":{{.Ports.BlockbookPublic}}",
     "explorer_url": "",

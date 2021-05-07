@@ -31,7 +31,7 @@ import (
 	"github.com/grupokindynos/coins-explorer/bchain/coins/ravencoin"
 	"github.com/grupokindynos/coins-explorer/bchain/coins/snowgem"
 	"github.com/grupokindynos/coins-explorer/bchain/coins/xbtx"
-	"github.com/grupokindynos/coins-explorer/bchain/coins/zcoin"
+	"github.com/grupokindynos/coins-explorer/bchain/coins/firo"
 	"github.com/grupokindynos/coins-explorer/common"
 
 	"github.com/juju/errors"
@@ -52,7 +52,7 @@ func init() {
 	BlockChainFactories["Groestlcoin"] = grs.NewGroestlcoinRPC
 	BlockChainFactories["Litecoin"] = litecoin.NewLitecoinRPC
 	BlockChainFactories["Polis"] = polis.NewPolisRPC
-	BlockChainFactories["Zcoin"] = zcoin.NewZcoinRPC
+	BlockChainFactories["Firo"] = firo.NewFiroRPC
 	BlockChainFactories["Snowgem"] = snowgem.NewSnowGemRPC
 	BlockChainFactories["Ravencoin"] = ravencoin.NewRavencoinRPC
 	BlockChainFactories["Aryacoin"] = aryacoin.NewAryacoinRPC
